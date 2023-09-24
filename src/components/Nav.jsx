@@ -21,7 +21,7 @@ const Nav = () => {
                     </button>
                     <li className="nav__icon">
                         <a href="/cart" className='nav__link'>
-                            <FontAwsomeIcon icon="shopping-cart" />
+                            <FontAwesomeIcon icon="shopping-cart" />
                         </a>
                     </li>
                 </ul>
