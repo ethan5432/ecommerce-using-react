@@ -12,11 +12,19 @@ function App() {
   const [cart, setcart] = useState([])
 
   function addToCart(book) {
-    setcart(...cart, {...book, quantity: 1})
+    setcart([...cart, { ...book, quantity: 1 }])
   }
 
-  function changeQuantity(book) {
-    console.log(book.quantity)
+  function changeQuantity(book, quantity) {
+    setcart(cart.map(item => {
+      return item.id === book.id
+        ? {
+     
+          ...item,
+          quantity: +quantity,
+        }
+        : item
+    }));
   }
 
   useEffect(() => {
