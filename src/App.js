@@ -47,7 +47,7 @@ console.log(cart)
   return (
     <Router>
       <div>
-        <Nav numberOfitems={ numberOfitems() } />
+        <Nav numberOfItems={ numberOfitems() } />
         <Route path="/" exact component={Home} />
         <Route path="/books" exact render={() => <Books books={books} />} />
         <Route
