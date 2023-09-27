@@ -32,6 +32,14 @@ function App() {
     setcart(cart.filter(book => book.id !== item.id))
   }
 
+  function numberOfitems() {
+    let counter = 0;
+    cart.forEach((item) => {
+      counter += item.quantity
+    });
+    return counter;
+  }
+
   useEffect(() => {
 console.log(cart)
   },[cart])
@@ -39,7 +47,7 @@ console.log(cart)
   return (
     <Router>
       <div>
-        <Nav />
+        <Nav numberOfitems={ numberOfitems() } />
         <Route path="/" exact component={Home} />
         <Route path="/books" exact render={() => <Books books={books} />} />
         <Route
